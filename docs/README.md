@@ -1,114 +1,71 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+# Quick Order
 
-# APP NAME
+This custom component allows to add a product in your cart with the SKU.
 
-<!-- DOCS-IGNORE:start -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<!-- DOCS-IGNORE:end -->
-
-Under the app's name, you should explain the topic, giving a **brief description** of its **functionality** in a store when installed.
-
-Next, **add media** (either an image of a GIF) with the rendered components, so that users can better understand how the app works in practice. 
-
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
-
-## Configuration 
-
-In this section, you first must **add the primary instructions** that will allow users to use the app's blocks in their store, such as:
-
-1. Adding the app as a theme dependency in the `manifest.json` file;
-2. Declaring the app's main block in a given theme template or inside another block from the theme.
-
-Remember to add a table with all blocks exported by the app and their descriptions. You can verify an example of it on the [Search Result documentation](https://vtex.io/docs/components/all/vtex.search-result@3.56.1/). 
-
-Next, add the **props table** containing your block's props. 
-
-If the app exports more than one block, create several tables - one for each block. For example:
-
-### `block-1` props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+![image](https://user-images.githubusercontent.com/101153916/195465513-51a5ce8f-1adb-4a04-acbc-3ffc0d09adc0.png)
 
 
-### `block-2` props
+## Configuration
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+### Step 1 -  Basic setup
 
-Prop types are: 
+Access in github to VTEX APPS and search react-app-template (https://github.com/vtex-apps/react-app-template) this is the template base for this project. If you want 
+to start the project from the beginning clone this template.
 
-- `string` 
-- `enum` 
-- `number` 
-- `boolean` 
-- `object` 
-- `array` 
+### Step 2 - Cloning the repository
 
-When documenting a prop whose type is `object` or `array` another prop table will be needed. You can create it following the example below:
+If you want to work with this template open your terminal a clone this repository, command (git clone [urlRepository], to your local files to be able to effectively 
+start working on it.
+Then, access the repository's directory using your terminal. 
 
-- `propName` object:
+### Step 3 - Editing the `Manifest.json`
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+Once in the repository directory, it is time to edit the `manifest.json` file. 
+
+Once you are in the file, you must replace the `vendor` value. `vendor` is the account name you are working on, if you want yo can modify name, titel, and description. For example:
+
+```json
+{
+  "vendor": "storecomponents",
+  "name": "my-custom-component",
+}
+```
+You should also check the `package.json` file globar and the file in react folder, verify the name and the version.
+
+### Step 4 -  Installing node-modules
+
+In your terminal enter in react folder, command (cd react), then put yarn in the terminal, this commad install node-modules folder, close your editor and open again 
+the project in your editor, you should have install and funtional the modules in react folder.
+
+### Step 5- Run and preview your component
+
+Then time has come to upload all the changes you made in your local files to the platform. For that, use the `vtex link` command. If the process runs without any  
+errors, the following message will be displayed: `App linked successfully`.
+
+To use the component in a store you should this in your "dependencies" in `manifest.json` file, "vendorName.componentName" : "version", for example:
+ ```json
+{
+"dependencies": {
+   "itgloberspartnercl.quick-order": "0.x"
+  }
+}
+```
+Then put the component where ever you need.
+
+This will enable you to see the applied changes in real time, through the account and workspace in which you are working.
+
+## Dependencies
+1. "vtex.css-handles": "0.x"
+2. "vtex.checkout-graphql": "0.x"
+3. "vtex.search-graphql": "0.x"
+
+## Store Component Apps
+1. None
 
 
-Remember to also use this Configuration section to  **showcase any necessary disclaimer** related to the app and its blocks, such as the different behavior it may display during its configuration. 
+## Custom Apps
+1. None
 
-## Modus Operandi *(not mandatory)*
+## Contributors
+1. Daniela María Torres Vélez
 
-There are scenarios in which an app can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the app in their store.
-
-If you feel compelled to give further details about the app, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
-
-## Customization
-
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in apps:
-
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
-
-Thereafter, you should add a single column table with the available CSS handles for the app, like the one below. Note that the Handles must be ordered alphabetically.
-
-| CSS Handles |
-| ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
-
-
-If there are none, add the following sentence instead:
-
-`No CSS Handles are available yet for the app customization.`
-
-<!-- DOCS-IGNORE:start -->
-
-## Contributors ✨
-
-Thanks goes to these wonderful people:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
-
-<!-- DOCS-IGNORE:end -->
-
----- 
-
-Check out some documentation models that are already live: 
-- [Breadcrumb](https://github.com/vtex-apps/breadcrumb)
-- [Image](https://vtex.io/docs/components/general/vtex.store-components/image)
-- [Condition Layout](https://vtex.io/docs/components/all/vtex.condition-layout@1.1.6/)
-- [Add To Cart Button](https://vtex.io/docs/components/content-blocks/vtex.add-to-cart-button@0.9.0/)
-- [Store Form](https://vtex.io/docs/components/all/vtex.store-form@0.3.4/)
